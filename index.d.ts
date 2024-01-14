@@ -1,6 +1,6 @@
 interface Options {
-    ld?: boolean;
-    milliseconds?: boolean;
+    withMs?: boolean;
+    complete?: boolean;
 }
 
 /**

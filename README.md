@@ -14,8 +14,8 @@ npm install format-time.ts
 /**
  * Formats a ms into a readable time format.
  * @param ms The input duration in milliseconds.
- * @param op Options = ld?: boolean;
- *                     milliseconds?: boolean;
+ * @param op Options = withMs?: boolean;
+ *                     complete?: boolean;
  * @returns The formatted duration string.
  */
 
@@ -34,18 +34,14 @@ const formattedDuration = format(durationInMilliseconds);
 console.log(formattedDuration); // Output: '2:30'
 
 // Custom formatting options
-const customFormattedDuration = format(durationInMilliseconds, { ld: true, milliseconds: true });
-console.log(customFormattedDuration); // Output: '2:30.000'
+const customFormattedDuration = format(durationInMilliseconds, { withMs: true, complete: true });
+console.log(customFormattedDuration); // Output: '2m 30s 0ms'
 ```
 
 # Credits
 
-This package is adapted from the following repositories:
+This package adapts code snippets from the following repositories:
 
 * [sindresorhus/parse-ms](https://github.com/sindresorhus/parse-ms)
 
 * [rafaelrinaldi/add-zero](https://github.com/rafaelrinaldi/add-zero)
-
-A part of the code was inspired from the following repositories:
-
-* [ungoldman/format-duration](https://github.com/ungoldman/format-duration) and this is the [License](https://github.com/ungoldman/format-duration/blob/main/LICENSE.md)

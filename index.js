@@ -43,31 +43,42 @@ function cvv(d, sm) {
 /**
  * 
  * @param {number} ms - Milisegundos
- * @param {object} op - Opciones (en la interfaz options)
+ * @param {object} op - Opciones (leer los types)
  * @returns {string} - La duración formateada
  */
 function format(ms, op) {
-    const MnOp = op?.ld ?? false;
-    const QrSt = ms < 0 ? -ms : ms;
-    const UvWx = cvv(ms, MnOp);
-    const YzAb = parseMs(QrSt);
-    const CdEf = addZero(YzAb.seconds);
+    const milisegundos = ms % 1000;
+    let segundos = Math.floor((ms / 1000) % 60);
+    let minutos = Math.floor((ms / (1000 * 60)) % 60);
+    let horas = Math.floor((ms / (1000 * 60 * 60)) % 24);
+    let dias = Math.floor(ms / (1000 * 60 * 60 * 24));
 
-    let GhIj = '';
+    const withMs = op && op.withMs;
+    const complete = op && op.complete;
 
-    if (YzAb.days) {
-        GhIj = `${UvWx}${YzAb.days}:${addZero(YzAb.hours)}:${addZero(YzAb.minutes)}:${CdEf}`;
-    } else if (YzAb.hours) {
-        GhIj = `${UvWx}${op?.millisenconds ? addZero(YzAb.hours) : YzAb.hours}:${addZero(YzAb.minutes)}:${CdEf}`;
-    } else {
-        GhIj = `${UvWx}${op?.millisenconds ? addZero(YzAb.minutes) : YzAb.minutes}:${CdEf}`;
+    let resultado = "";
+
+    if (dias > 0) {
+        resultado += `${dias}:`;
     }
 
-    if (MnOp) {
-        GhIj += `.${addZero(YzAb.ms, 3)}`;
+    resultado += `${horas < 10 ? "0" : ""}${horas}:`;
+    resultado += `${minutos < 10 ? "0" : ""}${minutos}:`;
+    resultado += `${segundos < 10 ? "0" : ""}${segundos}`;
+
+    if (withMs) {
+        resultado += `.${milisegundos}`;
     }
 
-    return GhIj;
+    if (complete) {
+        resultado = `${dias > 0 ? `${dias}d ` : ""}${horas > 0 ? `${horas}h ` : ""}${minutos}m ${segundos}s`;
+
+        if (withMs) {
+            resultado += ` ${milisegundos}ms`;
+        }
+    }
+
+    return resultado;
 }
 
 module.exports = { format };
