@@ -2,7 +2,7 @@
   "name": "format-time.ts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,10 +14,6 @@
   "author": "",
   "license": "ISC",
   "types": "./index.d.ts",
-  "type": "module",
-  "ts-node": {
-    "transpileOnly": true
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Andrespolicrack/format-time.ts.git"
