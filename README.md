@@ -1,6 +1,6 @@
 # format-time.ts
 
-A TypeScript package for formatting durations into strings.
+A TypeScript package for formatting ms into a readable time format.
 
 ## Installation
 
@@ -12,7 +12,7 @@ npm install format-time.ts
 
 ```ts
 /**
- * Formats a duration into a string.
+ * Formats a ms into a readable time format.
  * @param ms The input duration in milliseconds.
  * @param op Options = ld?: boolean;
  *                     milliseconds?: boolean;
