@@ -2,7 +2,6 @@
   "name": "format-time.ts",
   "version": "1.0.1",
   "description": "",
-  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +10,10 @@
     "format-time",
     "time"
   ],
-  "author": "",
+  "author": "andrew.dev.es",
   "license": "ISC",
+  "main": "./index.js",
+  "module": "./index.mjs",
   "types": "./index.d.ts",
   "repository": {
     "type": "git",
@@ -21,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/Andrespolicrack/format-time.ts/issues"
   },
-  "homepage": "https://github.com/Andrespolicrack/format-time.ts#readme"
+  "homepage": "https://github.com/Andrespolicrack/format-time.ts#readme",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.mjs"
+    }
+  }
 }
