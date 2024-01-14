@@ -59,14 +59,14 @@ function format(ms, op) {
     let resultado = "";
 
     if (dias > 0) {
-        resultado += `${dias}:`;
+        resultado += `${dias}d `;
     }
 
-    if (minutos > 0 || dias > 0) {
-        resultado += `${minutos < 10 ? "0" : ""}${minutos}m `;
+    if (horas > 0 || dias > 0) {
+        resultado += `${horas < 10 ? "0" : ""}${horas}h `;
     }
 
-    resultado += `${horas < 10 ? "0" : ""}${horas}h `;
+    resultado += `${minutos < 10 ? "0" : ""}${minutos}m `;
     resultado += `${segundos < 10 ? "0" : ""}${segundos}s`;
 
     if (withMs) {
@@ -74,8 +74,8 @@ function format(ms, op) {
     }
 
     if (complete) {
-        if (minutos === 0 && dias === 0) {
-            resultado = `${horas}h ${segundos}s`;
+        if (dias === 0 && horas === 0) {
+            resultado = `${minutos}m ${segundos}s`;
         }
 
         if (withMs) {
