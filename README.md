@@ -46,6 +46,6 @@ This package is adapted from the following repositories:
 
 * [rafaelrinaldi/add-zero](https://github.com/rafaelrinaldi/add-zero)
 
-A part of the code was inspired from the following repositorie:
+A part of the code was inspired from the following repositories:
 
 * [ungoldman/format-duration](https://github.com/ungoldman/format-duration) and this is the [License](https://github.com/ungoldman/format-duration/blob/main/LICENSE.md)
