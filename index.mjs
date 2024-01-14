@@ -54,34 +54,39 @@ function parseMs(ms) {
     let minutos = Math.floor((ms / (1000 * 60)) % 60);
     let horas = Math.floor((ms / (1000 * 60 * 60)) % 24);
     let dias = Math.floor(ms / (1000 * 60 * 60 * 24));
-  
+
     const withMs = op && op.withMs;
     const complete = op && op.complete;
-  
+
     let resultado = "";
-  
+
     if (dias > 0) {
-      resultado += `${dias}:`;
+        resultado += `${dias}:`;
     }
-  
-    resultado += `${horas < 10 ? "0" : ""}${horas}:`;
-    resultado += `${minutos < 10 ? "0" : ""}${minutos}:`;
-    resultado += `${segundos < 10 ? "0" : ""}${segundos}`;
-  
+
+    if (minutos > 0 || dias > 0) {
+        resultado += `${minutos < 10 ? "0" : ""}${minutos}m `;
+    }
+
+    resultado += `${horas < 10 ? "0" : ""}${horas}h `;
+    resultado += `${segundos < 10 ? "0" : ""}${segundos}s`;
+
     if (withMs) {
-      resultado += `.${milisegundos}`;
-    }
-  
-    if (complete) {
-        resultado = `${dias > 0 ? `${dias}d ` : ""}${horas > 0 ? `${horas}h ` : ""}${minutos}m ${segundos}s`;
-  
-      if (withMs) {
         resultado += ` ${milisegundos}ms`;
-      }
     }
-  
-    return resultado;
-  } 
+
+    if (complete) {
+        if (minutos === 0 && dias === 0) {
+            resultado = `${horas}h ${segundos}s`;
+        }
+
+        if (withMs) {
+            resultado += ` ${milisegundos}ms`;
+        }
+    }
+
+    return resultado.trim();
+}
   
   export { format };
   

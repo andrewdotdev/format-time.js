@@ -62,23 +62,28 @@ function format(ms, op) {
         resultado += `${dias}:`;
     }
 
-    resultado += `${horas < 10 ? "0" : ""}${horas}:`;
-    resultado += `${minutos < 10 ? "0" : ""}${minutos}:`;
-    resultado += `${segundos < 10 ? "0" : ""}${segundos}`;
+    if (minutos > 0 || dias > 0) {
+        resultado += `${minutos < 10 ? "0" : ""}${minutos}m `;
+    }
+
+    resultado += `${horas < 10 ? "0" : ""}${horas}h `;
+    resultado += `${segundos < 10 ? "0" : ""}${segundos}s`;
 
     if (withMs) {
-        resultado += `.${milisegundos}`;
+        resultado += ` ${milisegundos}ms`;
     }
 
     if (complete) {
-        resultado = `${dias > 0 ? `${dias}d ` : ""}${horas > 0 ? `${horas}h ` : ""}${minutos}m ${segundos}s`;
+        if (minutos === 0 && dias === 0) {
+            resultado = `${horas}h ${segundos}s`;
+        }
 
         if (withMs) {
             resultado += ` ${milisegundos}ms`;
         }
     }
 
-    return resultado;
+    return resultado.trim();
 }
 
 module.exports = { format };
