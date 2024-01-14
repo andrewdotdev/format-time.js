@@ -6,12 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "format",
+    "format-time",
+    "time"
+  ],
   "author": "",
   "license": "ISC",
   "types": "./index.d.ts",
   "type": "module",
   "ts-node": {
     "transpileOnly": true
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andrespolicrack/format-time.ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Andrespolicrack/format-time.ts/issues"
+  },
+  "homepage": "https://github.com/Andrespolicrack/format-time.ts#readme"
 }
