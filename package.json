@@ -1,5 +1,5 @@
 {
-  "name": "format-time.ts",
+  "name": "format-time.js",
   "version": "2.0.4",
   "description": "",
   "scripts": {
@@ -17,12 +17,12 @@
   "types": "./index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Andrespolicrack/format-time.ts.git"
+    "url": "git+https://github.com/Andrespolicrack/format-time.js.git"
   },
   "bugs": {
-    "url": "https://github.com/Andrespolicrack/format-time.ts/issues"
+    "url": "https://github.com/Andrespolicrack/format-time.js/issues"
   },
-  "homepage": "https://github.com/Andrespolicrack/format-time.ts#readme",
+  "homepage": "https://github.com/Andrespolicrack/format-time.js#readme",
   "exports": {
     ".": {
       "require": "./index.js",

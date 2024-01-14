@@ -1,11 +1,11 @@
-# format-time.ts
+# format-time.js
 
-A TypeScript package for formatting ms into a readable time format.
+A package for formatting ms into a readable time format.
 
 ## Installation
 
 ```bash
-npm install format-time.ts
+npm install format-time.js
 ```
 
 # Usage
@@ -25,7 +25,7 @@ format(ms, op)
 # Examples
 
 ```ts
-import { format } from 'format-time.ts';
+import { format } from 'format-time.js';
 
 const durationInMilliseconds = 150000; // 2 minutes and 30 seconds
 
