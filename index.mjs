@@ -57,15 +57,19 @@ function parseMs(ms) {
     const withMs = op && op.withMs;
     const complete = op && op.complete;
 
-    let resultado = "";
+    let resultado;
 
-    if (dias > 0) {
-        resultado += `${dias}:`;
+    if (dias === 0 && horas === 0 && minutos === 0 && segundos !== 0) {
+        resultado = `00:${segundos}`;
+    } else if (dias === 0 && horas === 0 && minutos !== 0) {
+        resultado = `${minutos}:${segundos}`;
+    } else if (dias === 0 && horas !== 0) {
+        resultado = `${horas}:${minutos}:${segundos}`;
+    } else if (dias !== 0) {
+        resultado = `${dias}:${horas}:${minutos}:${segundos}`;
+    } else {
+        resultado = `00:00`
     }
-
-    resultado += `${horas < 10 ? "0" : ""}${horas}:`;
-    resultado += `${minutos < 10 ? "0" : ""}${minutos}:`;
-    resultado += `${segundos < 10 ? "0" : ""}${segundos}`;
 
     if (withMs) {
         resultado += `.${milisegundos}`;
@@ -85,7 +89,7 @@ function parseMs(ms) {
         }
 
         if (withMs) {
-            resultado += ` ${milisegundos} ms`;
+            resultado += ` ${milisegundos}ms`;
         }
     }
 
