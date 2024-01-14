@@ -37,11 +37,3 @@ console.log(formattedDuration); // Output: '2:30'
 const customFormattedDuration = format(durationInMilliseconds, { withMs: true, complete: true });
 console.log(customFormattedDuration); // Output: '2m 30s 0ms'
 ```
-
-# Credits
-
-This package adapts code snippets from the following repositories:
-
-* [sindresorhus/parse-ms](https://github.com/sindresorhus/parse-ms)
-
-* [rafaelrinaldi/add-zero](https://github.com/rafaelrinaldi/add-zero)
