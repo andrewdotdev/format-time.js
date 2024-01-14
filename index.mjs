@@ -1,44 +1,6 @@
-// Adaptado de https://github.com/sindresorhus/parse-ms
-function parseMs(ms) {
-    if (typeof ms !== 'number') {
-        throw new TypeError('Se esperaba un número');
-    }
-  
-    return {
-        days: Math.trunc(ms / 86400000),
-        hours: Math.trunc(ms / 3600000) % 24,
-        minutes: Math.trunc(ms / 60000) % 60,
-        seconds: Math.trunc(ms / 1000) % 60,
-        ms: Math.trunc(ms) % 1000
-    };
-  }
-  
-  // Adaptado de https://github.com/rafaelrinaldi/add-zero
-  function addZero(time, digits = 2) {
-    let paraString = time.toString();
-    digits = digits || 2;
-  
-    let capacity = digits - paraString.length + 1;
-    let result = new Array(capacity).join('0').concat(paraString);
-  
-    return result;
-  }
-  
-  function cvv(d, sm) {
-    if (sm) {
-        if (d < 0) {
-            return '-';
-        } else {
-            return '';
-        }
-    } else {
-        if (d <= -1000) {
-            return '-';
-        } else {
-            return '';
-        }
-    }
-  }
+if (typeof ms !== 'number') {
+    throw new TypeError('Se esperaba un número');
+}
   
   /**
   * 
