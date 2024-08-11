@@ -1,5 +1,5 @@
 # format-time.js
-
+<!-- Thanks for reading -->
 A package for formatting ms into a readable time format.
 
 ## Installation
