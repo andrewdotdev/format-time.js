@@ -1,9 +1,10 @@
 {
   "name": "format-time.js",
   "version": "1.0.0",
-  "description": "",
+  "description": "A package to format ms to readable time format",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "keywords": [
     "format",
@@ -12,21 +13,13 @@
   ],
   "author": "andrew.dev.es",
   "license": "ISC",
-  "main": "./index.js",
-  "module": "./index.mjs",
-  "types": "./index.d.ts",
+  "main": "./dist/main.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Andrespolicrack/format-time.js.git"
+    "url": "git+https://github.com/andrewdotdev/format-time.js.git"
   },
   "bugs": {
-    "url": "https://github.com/Andrespolicrack/format-time.js/issues"
+    "url": "https://github.com/andrewdotdev/format-time.js/issues"
   },
-  "homepage": "https://github.com/Andrespolicrack/format-time.js#readme",
-  "exports": {
-    ".": {
-      "require": "./index.js",
-      "import": "./index.mjs"
-    }
-  }
+  "homepage": "https://github.com/andrewdotdev/format-time.js#readme"
 }
