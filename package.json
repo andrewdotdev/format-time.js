@@ -1,6 +1,6 @@
 {
   "name": "format-time.js",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A package to format ms to readable time format",
   "scripts": {
     "build": "tsc",
