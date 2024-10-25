@@ -1,5 +1,5 @@
 {
-  "name": "format-time.js",
+  "name": "ms-humanizer",
   "version": "2.0.0",
   "description": "A package to format ms to readable time format",
   "scripts": {
@@ -16,10 +16,10 @@
   "main": "./dist/main.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrewdotdev/format-time.js.git"
+    "url": "git+https://github.com/andrewdotdev/ms-humanizer.git"
   },
   "bugs": {
-    "url": "https://github.com/andrewdotdev/format-time.js/issues"
+    "url": "https://github.com/andrewdotdev/ms-humanizer/issues"
   },
-  "homepage": "https://github.com/andrewdotdev/format-time.js#readme"
+  "homepage": "https://github.com/andrewdotdev/ms-humanizer#readme"
 }

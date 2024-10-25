@@ -5,7 +5,7 @@ A package for formatting ms into a readable time format.
 ## Installation
 
 ```bash
-npm install format-time.js
+npm install ms-humanizer
 ```
 
 # Usage
@@ -25,7 +25,7 @@ format(ms, op)
 # Examples
 
 ```ts
-import { format } from 'format-time.js';
+import { format } from 'ms-humanizer';
 
 const durationInMilliseconds = 150000; // 2 minutes and 30 seconds
 
